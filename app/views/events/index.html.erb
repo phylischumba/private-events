@@ -16,7 +16,7 @@
   <tbody>
     <% @upcoming_events.each do |event| %>
       <tr>
-        <td><%= event.title %></td>
+        <td class="td"><%= event.title %></td>
         <td><%= event.location %></td>
         <td><%= event.event_date %></td>
         <td><%= link_to 'Show', event %></td>

@@ -15,7 +15,7 @@
     
     <div>
         <%= form.collection_check_boxes :attendee_ids, User.all, :id, :name do |cb| %>
-          <% cb.label {cb.check_box + cb.text(class: "display")} %> 
+          <% cb.label(class: "checkbox-inline input_checkbox") {cb.check_box(class: "checkbox") + cb.text } %> 
         <% end %>
     </div>
          
