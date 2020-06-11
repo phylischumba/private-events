@@ -11,10 +11,18 @@
   <%= @user.email %>
 </p>
 
-<h5><b> Events </b></h5>
+<h5><b> Created Events </b></h5>
 <% @user.created_events.each do |event| %>
   <p> <%= link_to event.title, event_path(event) %> </p>
 <% end %>
+<br>
+<br>
+
+<h5><b> Attended Events </b></h5>
+<% @user.attended_events.each do |event| %>
+  <p> <%= link_to event.title, event_path(event) %> </p> 
+<% end %>
+
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
