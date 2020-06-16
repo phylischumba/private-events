@@ -1,0 +1,14 @@
+<h1>Log in</h1>
+<%= form_for :session, url: login_path do |f| %>
+     <%= f.label :name %><br />
+    <%= f.text_field :name, placeholder: 'Your user name here' %>
+    </p>
+    <p>
+    <%= f.label :email %><br />
+    <%= f.email_field :email, placeholder: 'example@example.com' %>
+    </p>
+
+  <%= f.submit "Log in"  %>
+ 
+<% end %></br>
+<%= link_to "Sign up", new_user_path %>

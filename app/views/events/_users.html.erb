@@ -1,0 +1,27 @@
+
+<h5><b> Select Attendees </b></h5>
+<%= form_with(model: @event, local: true) do |form| %>
+  <% if @event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
+
+      <ul>
+        <% @event.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+    
+    <div>
+        <%= form.collection_check_boxes :attendee_ids, User.all, :id, :name do |cb| %>
+          <% cb.label(class: "checkbox-inline input_checkbox") {cb.check_box(class: "checkbox") + cb.text } %> 
+        <% end %>
+    </div>
+         
+    <div class="actions">
+      <%= form.submit 'Update Event' %>
+    </div>
+    
+  <% end %>
+  

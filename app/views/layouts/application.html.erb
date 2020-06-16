@@ -7,9 +7,45 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   </head>
 
   <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-secondary text-light d-flex flex-row">
+      <div class ="float-left w-75">
+        <a>
+          <%= link_to "Events", events_path, class: "navbar-brand text-light" %>
+        </a>
+        <a>
+          <%= link_to "Users", users_path, class: "navbar-brand text-light" %>
+        </a>
+      </div>
+      <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+        <% if !logged_in? %>
+          <li class="nav-item">
+              <a>
+                <%= link_to "Sign Up", new_user_path,  class: "nav-link text-light"%> 
+              </a>
+            </li>
+          <li class="nav-item">
+              <a>
+                <%= link_to "Sign In", login_path, class: "nav-link text-light"%> 
+              </a>
+          </li>
+        <% else %>
+            <li class="nav-item">
+              <a>
+                <%= link_to "Log Out", logout_path, method: :delete, class: "nav-link text-light"%> 
+              </a>
+            </li>
+        <% end %>
+         
+        </ul>
+      </div>
+    </nav>
+    <div class="px-4 pt-4">
     <%= yield %>
+    </div>
   </body>
 </html>

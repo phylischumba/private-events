@@ -13,3 +13,30 @@
  *= require_tree .
  *= require_self
  */
+
+
+ .checkbox-inline {
+     display: block;
+ }
+
+ .checkbox {
+     margin-right: 10px;
+ }
+ 
+ table {
+    border-collapse: separate;
+    border-spacing: 0 15px;
+  }
+  
+  th {
+    background-color: #6C757D;
+    color: white;
+  }
+  
+  th,
+  td {
+    width: 150px;
+    text-align: center;
+    border: 1px solid black;
+    padding: 5px;
+  }
